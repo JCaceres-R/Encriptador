@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
-    <link rel="stylesheet" href="styles/stryle.css">
-
-
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <script src="app.js"></script>
+    
 
-    <header>
-
-    </header>
+    <header><img src="assets/Logo-1.png" alt="Logo_Alura"></header>
     <main>
-        <form>
-            <label for="Texto">Texto que quiere Encriptar:</label>
-            <input type="text" id="Texto" name="Texto"><br><br>
-            
-            <button type="button" onclick="accionEncriptar()">"Encriptar"</button>
-            <button type="button" onclick="accionDesencriptar()">"Desencriptar"</button>
-        </form><br><br>
-        
-        <div>
-            <p>Mensaje Encriptado</p>
-            <p id="resultado">.</p>
-        </div>
+        <section class="CuadrosTexto">
+            <div class="SeccionInput">
+                <textarea class="inputTex" name="Texto" id="textoingreso" placeholder="Ingrese su texto aquí..."></textarea>
+                <div>
+                    <button class="BotonCopiar" type="button" onclick="pegarContenido()">Pegar</button>
+                    <button class="BotonCopiar" type="button" onclick="borrar('textoingreso')">Borrar</button>
+                </div>
 
-        <p id="demo">Parrafor de prueba</p>
+                <section class="Bot">
+                    <button class="botones" type="button" onclick="accionEncriptar()">Encriptar</button>
+                    <button class="botones" type="button" onclick="accionDesencriptar()">Desencriptar</button>
+                </section>
+            </div>
+            <div class="SeccionResultado">
+                <textarea class="ResultadoTexto" readonly name="Res" id="resultado" placeholder="Ningún mensaje fue encontrado"></textarea>
+
+                <div>
+                    <button class="BotonCopiar" type="button" onclick="copiarContenido()">Copiar</button>
+                    <button class="BotonCopiar" type="button" onclick="borrar('resultado')">Borrar</button>
+                </div>
+
+
+            </div>
+        </section><br><br>
+
     </main>
-    <footer>
-
+    <footer class="foot">
+        <p>Desarrollado por Johan Caceres</p>
+        <a href="https://github.com/JCaceres-R"><img src="assets/github.png" alt="Git_icon"></a>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
