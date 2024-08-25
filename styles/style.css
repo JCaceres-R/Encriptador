@@ -76,7 +76,7 @@ body{
     font-family: var(--fuente-krona);
     font-size: 1.5rem;
     border-radius: 10px;
-    background-image:url(/assets/Muñeco.png);
+    background-image:url(/assets/alura_hombre.png);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 60%; 
