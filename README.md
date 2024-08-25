@@ -1,40 +1,68 @@
-# Encriptador
- Ecriptador de texto porpuesto por Alura Latam
+# Encriptador de Texto
 
+![Logo del Proyecto](assets/Logo-1.png)
 
-¡Bienvenidas y bienvenidos a nuestro primer desafío!
+Este proyecto es una aplicación web para encriptar y desencriptar texto. La aplicación permite ingresar un texto, encriptarlo mediante un algoritmo simple, y luego desencriptarlo para recuperar el mensaje original. También cuenta con funciones para copiar y pegar texto.
 
-Durante estas cuatro semanas, vamos a trabajar en una aplicación que encripta textos, así podrás intercambiar mensajes secretos con otras personas que sepan el secreto de la encriptación utilizada.
+## Características
 
-Las "llaves" de encriptación que utilizaremos son las siguientes:
+- **Encriptar Texto:** Convierte las vocales en una secuencia de caracteres específicos (ej. "a" en "ai").
+- **Desencriptar Texto:** Revierte la encriptación para obtener el texto original.
+- **Copiar y Pegar:** Permite copiar el texto encriptado/desencriptado y pegarlo en el área de entrada.
+- **Interfaz Responsable:** Adaptable a diferentes tamaños de pantalla.
 
-La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat"
+## Tecnologías Utilizadas
 
-Requisitos:
+- **HTML5:** Estructura del contenido web.
+- **CSS3:** Estilos y diseño visual.
+- **JavaScript:** Funcionalidad interactiva para encriptar y desencriptar texto.
 
-Debe funcionar solo con letras minúsculas
-No deben ser utilizados letras con acentos ni caracteres especiales
-Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
-Por ejemplo:
-"gato" => "gaitober"
-gaitober" => "gato"
+## Instalación y Uso
 
-La página debe tener campos para
-inserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre as dos opciones.
-El resultado debe ser mostrado en la pantalla.
-Extras:
+### Requisitos
 
-Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, o sea que tenga la misma funcionalidad del ctrl+C o de la opción "copiar" del menú de las aplicaciones.
-Tenemos un periodo de tiempo de cuatro semanas para desarrollar el proyecto y vamos a trabajar con el sistema ágil de desarrollo, utilizando el Trello de la siguiente forma:
+- Un navegador web moderno (Chrome, Firefox, Edge, etc.).
+- Conexión a Internet para cargar las fuentes y otros recursos.
 
-La columna Listos para iniciar presenta las tarjetas con elementos que aun no fueron desarrollados.
-En la columna En Desarrollo estarán los elementos que estés desarrollando en el momento. Al iniciar una tarea, podrás mover la tarjeta que contiene dicha tarea para esta columna.
-En la columna Pausado estarán los elementos que comenzaste a desarrollar, pero necesitaste parar por algún motivo.
-Por fin, en la columna Concluido estarán los elementos ya concluidos.
-El Trello es una herramienta de uso individual para que puedas controlar el progreso de tus actividades, pero no será evaluada.
+### Instrucciones
 
-Buen proyecto!
+1. **Clona el repositorio:**
+
+    ```bash
+    git clone https://github.com/JCaceres-R/EncriptadorTexto.git
+    ```
+
+2. **Navega a la carpeta del proyecto:**
+
+    ```bash
+    cd EncriptadorTexto
+    ```
+
+3. **Abre el archivo `index.html` en tu navegador:**
+
+    Puedes hacer doble clic en el archivo `index.html` o abrirlo desde el navegador.
+
+4. **Usa la Aplicación:**
+
+    - **Ingrese el texto:** Escribe el texto que deseas encriptar en el área de texto.
+    - **Encripta:** Haz clic en "Encriptar" para convertir el texto.
+    - **Desencripta:** Haz clic en "Desencriptar" para revertir el proceso.
+    - **Copia y pega:** Usa los botones correspondientes para copiar y pegar texto.
+
+## Funcionalidades del Código
+
+### JavaScript (app.js)
+
+- **Restricciones de Entrada:** Se asegura de que solo se ingresen letras minúsculas y espacios.
+- **Funciones de Encriptado/Desencriptado:** Implementación de un sencillo algoritmo de sustitución de caracteres.
+- **Manipulación del Portapapeles:** Permite copiar el texto procesado y pegar texto desde el portapapeles.
+  
+```javascript
+document.getElementById('textoingreso').addEventListener('input', function (e) {
+    const invalidChars = /[^a-z\s]/g;
+
+    if (invalidChars.test(e.target.value)) {
+        alert("Por favor, solo escribe letras minúsculas y espacios.");
+        e.target.value = e.target.value.replace(invalidChars, '');
+    }
+});
